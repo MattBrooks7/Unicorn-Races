@@ -1,0 +1,55 @@
+Pseudocode Outline:
+
+Gameplan and structure:
+Header
+Master or Main: https://github.com/MattBrooks7/Unicorn-Races.git
+User Authentication:
+User registration and login system.
+Differentiate between regular users and admins.
+Data Models:
+Users: Store user details and unicorn money balance.
+Admins: Special user with additional privileges.
+Racers: Information about each horse and unicorn.
+Races: Details about each race.
+Front-End Development:
+Web pages for user registration, login, and main game interface.
+Interface for users to view races, place wagers, and check results.
+Admin interface to manage racers and initiate/finalize races.
+Back-End Development:
+API endpoints for user authentication, managing races, racers, and wagers.
+Logic to calculate winnings and update user balances.
+Database to store all the data.
+Game Logic:
+Race mechanics: Randomize race outcomes within defined parameters.
+Wager system: Allow users to place bets and calculate payouts.
+Testing and Deployment:
+Test the application thoroughly.
+Deploy the app on a web server.
+Implementation:
+1. User Authentication:
+Backend:
+API endpoints for registration and login.
+Session management for user authentication.
+Frontend:
+Forms for user registration and login.
+Display user information and unicorn money balance.
+2. Data Models:
+User: Username, Password, Role (User/Admin), Unicorn Money.
+Racer: Name, Type (Horse/Unicorn), Stats.
+Race: List of Racers, Race Status, Winner.
+Wager: User, Racer, Amount.
+3. Front-End Development:
+HTML/CSS/JavaScript for the user interface.
+Responsive design for mobile and desktop.
+Admin interface for race and racer management.
+4. Back-End Development:
+Node.js with Express for the server.
+REST API for the front-end to interact with.
+Database (e.g., MongoDB) for storing data.
+5. Game Logic:
+Randomize race outcomes based on racer stats.
+Handle wagers and calculate winnings.
+6. Testing and Deployment:
+Unit and integration tests.
+Deployment on a cloud platform like Heroku or AWS.
+

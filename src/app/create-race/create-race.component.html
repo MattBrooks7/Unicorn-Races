@@ -1,0 +1,21 @@
+<form [formGroup]="raceForm" (ngSubmit)="submitForm()">
+  <!-- Number of Unicorns -->
+  <label for="unicorns">Number of Unicorns (2-8):</label>
+  <input type="number" id="unicorns" formControlName="unicorns" min="2" max="8">
+  <!-- Racers Input -->
+  <div formArrayName="racers">
+    <div *ngFor="let racer of racers.controls; let i=index">
+      <label for="racer{{i}}">Racer {{i + 1}}:</label>
+      <input type="text" id="racer{{i}}" [formControlName]="i">
+    </div>
+  </div>
+  <!-- Winner Selection -->
+  <label for="winner">Pick a Winner:</label>
+  <select id="winner" formControlName="winner">
+    <!-- <option *ngFor="let racer of raceForm.get('racers').value" [value]="racer">{{racer}}</option> -->
+  </select>
+  <!-- Unicoin Wager -->
+  <label for="wager">Place a Unicoin Wager:</label>
+  <input type="number" id="wager" formControlName="unicoinWager">
+  <button type="submit">Submit</button>
+</form>
