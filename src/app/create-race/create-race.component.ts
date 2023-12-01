@@ -8,12 +8,21 @@ import { FormGroup, FormControl, FormArray, Validators } from '@angular/forms';
 })
 export class CreateRaceComponent{
   raceForm = new FormGroup({
-    unicorns: new FormControl(6, [Validators.required, Validators.min(2), Validators.max(8)]),
-    racers: new FormArray([]),
-    winner: new FormControl('', Validators.required),
-    unicoinWager: new FormControl(0, Validators.required),
-    raceOutcome: new FormControl('pending')
+    racers: new FormArray([])
   });
+  numbers = [2, 3, 4, 5, 6, 7, 8];
+  selectedNumber: number | undefined;
+  inputs: number[] = [];
+
+
+  updateInputs() {
+    if (this.selectedNumber) {
+      this.inputs = Array.from({ length: this.selectedNumber }, (_, i) => i + 1);
+      console.log(this.inputs);
+    } else {
+      this.inputs = [];
+    }
+  }
   get racers() {
     return this.raceForm.get('racers') as FormArray;
   }
