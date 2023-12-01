@@ -1,30 +1,36 @@
 Pseudocode Outline:
 
-Gameplan and structure:
-Header
 Master or Main: https://github.com/MattBrooks7/Unicorn-Races.git
+
 User Authentication:
 User registration and login system.
 Differentiate between regular users and admins.
+
 Data Models:
 Users: Store user details and unicorn money balance.
 Admins: Special user with additional privileges.
 Racers: Information about each horse and unicorn.
 Races: Details about each race.
+
 Front-End Development:
 Web pages for user registration, login, and main game interface.
 Interface for users to view races, place wagers, and check results.
 Admin interface to manage racers and initiate/finalize races.
+
 Back-End Development:
 API endpoints for user authentication, managing races, racers, and wagers.
 Logic to calculate winnings and update user balances.
 Database to store all the data.
+
 Game Logic:
-Race mechanics: Randomize race outcomes within defined parameters.
+Race mechanics: Admin picks winner when race is created
 Wager system: Allow users to place bets and calculate payouts.
+
 Testing and Deployment:
 Test the application thoroughly.
-Deploy the app on a web server.
+Deploy the app on a web server - Probably Firebase 
+
+
 Implementation:
 1. User Authentication:
 Backend:
