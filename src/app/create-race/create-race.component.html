@@ -10,10 +10,10 @@
 
 <div *ngIf="selectedNumber">
   <div *ngFor="let input of inputs; let i = index">
-    <input type="text" [placeholder]="'Input ' + (i + 1)">
+    <input type="text" [placeholder]="'Input ' + (i + 1)" [(ngModel)]="racers[i]" name="input">
   </div>
 </div>
-  <button>Submit</button>
+  <button (click)="getRacers()">Submit</button>
 </div>
 </form>
 

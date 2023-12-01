@@ -7,30 +7,26 @@ import { FormGroup, FormControl, FormArray, Validators } from '@angular/forms';
   styleUrls: ['./create-race.component.css']
 })
 export class CreateRaceComponent{
-  raceForm = new FormGroup({
-    racers: new FormArray([])
-  });
   numbers = [2, 3, 4, 5, 6, 7, 8];
   selectedNumber: number | undefined;
   inputs: number[] = [];
+  racers: string[] = [];
 
 
   updateInputs() {
     if (this.selectedNumber) {
       this.inputs = Array.from({ length: this.selectedNumber }, (_, i) => i + 1);
-      console.log(this.inputs);
+      this.racers = Array(this.selectedNumber).fill('');
     } else {
       this.inputs = [];
     }
   }
-  get racers() {
-    return this.raceForm.get('racers') as FormArray;
+
+  getRacers() {
+    console.log('Racers: ', this.racers);
   }
+
   submitForm() {
-    if (this.raceForm.valid) {
-      console.log(this.raceForm.value);
-      // Handle form submission logic here
-    }
+
   }
-  // Add logic to dynamically add/remove racer fields, etc.
 }
