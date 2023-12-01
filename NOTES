@@ -7,7 +7,7 @@ User registration and login system.
 Differentiate between regular users and admins.
 
 Data Models:
-Users: Store user details and unicorn money balance.
+Users: Store user details and unicorn money balance. ADD FIREBASE
 Admins: Special user with additional privileges.
 Racers: Information about each horse and unicorn.
 Races: Details about each race.
@@ -28,7 +28,7 @@ Wager system: Allow users to place bets and calculate payouts.
 
 Testing and Deployment:
 Test the application thoroughly.
-Deploy the app on a web server - Probably Firebase 
+Deploy the app on a web server - Probably Firebase
 
 
 Implementation:

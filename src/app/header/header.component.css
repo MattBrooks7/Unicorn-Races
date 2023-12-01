@@ -1,0 +1,58 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  position: relative;
+  color: white;
+}
+.header-left,
+.header-center,
+.header-right {
+  margin: 0;
+  padding: 0;
+}
+.header-center {
+  flex-grow: 1;
+  text-align: center;
+}
+.header-right {
+  text-align: right;
+}
+.header-right a {
+  color: black;
+  text-decoration: none;
+}
+
+.glitter-pink {
+  position: relative;
+  background: linear-gradient(45deg, #FF66B2, #FF9999);
+  overflow: hidden;
+  color: black;
+}
+.glitter-pink:before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 5%,
+    rgba(255, 255, 255, 0.3) 5%,
+    rgba(255, 255, 255, 0.3) 10%
+  );
+  opacity: 0.5;
+  transform: rotate(45deg);
+  animation: glitter 2s infinite linear;
+}
+@keyframes glitter {
+  0% {
+    transform: rotate(45deg) translate(-50%, -50%);
+  }
+  100% {
+    transform: rotate(45deg) translate(50%, 50%);
+  }
+}
