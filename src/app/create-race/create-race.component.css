@@ -1,60 +1,79 @@
-/* General form styling */
+/* General form styling with a magical unicorn theme */
 form {
-  font-family: Arial, sans-serif;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
   max-width: 600px;
   margin: 20px auto;
   padding: 20px;
-  background-color: #f4f4f4;
-  border-radius: 8px;
+  background-color: #f0e6f6; /* Light pastel purple */
+  border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border: 3px solid #e1bee7; /* Light purple border */
+  background-image: url('https://www.transparenttextures.com/patterns/sprinkles.png'),; /* Sprinkles and unicorn background */
+  background-repeat: repeat, no-repeat;
+  background-position: left top, right bottom;
 }
 
-/* Style for the label */
+/* Animated sparkle effect */
+@keyframes sparkle {
+  0% { background-position: 0 0, right bottom; }
+  50% { background-position: 100% 0, right bottom; }
+  100% { background-position: 0 0, right bottom; }
+}
+
+/* Style for the label with a magical unicorn feel */
 label {
   display: block;
   margin-bottom: 10px;
-  color: #333;
-  font-size: 16px;
+  color: #6a1b9a; /* Deeper purple for contrast */
+  font-size: 18px;
+  text-shadow: 1px 1px 2px pink;
 }
 
-/* Style for the select dropdown */
+/* Style for the select dropdown with unicorn colors */
 select {
   width: 100%;
   padding: 10px;
   margin-bottom: 20px;
-  border-radius: 4px;
-  border: 1px solid #ddd;
+  border-radius: 6px;
+  border: 1px solid #ce93d8; /* Light purple border */
   font-size: 14px;
-  color: #333;
+  color: #4a148c; /* Deep purple text */
+  background-color: #f3e5f5; /* Very light purple */
 }
 
-/* Style for the text inputs */
+/* Style for the text inputs with a sprinkle effect */
 input[type="text"] {
   width: 100%;
   padding: 10px;
   margin-bottom: 10px;
-  border-radius: 4px;
-  border: 1px solid #ddd;
+  border-radius: 6px;
+  border: 1px solid #ce93d8;
   font-size: 14px;
-  color: #333;
+  color: #4a148c;
+  background-color: #f3e5f5;
+  background-image: url('https://www.transparenttextures.com/patterns/iridescent.png'); /* Iridescent texture */
+  animation: sparkle 3s linear infinite;
 }
 
-/* Style for the submit button */
+/* Style for the submit button with a shimmering unicorn effect */
 button {
-  background-color: #007bff;
+  background-color: #ab47bc; /* Magic purple */
   color: white;
   padding: 10px 15px;
   border: none;
-  border-radius: 4px;
+  border-radius: 6px;
   cursor: pointer;
   font-size: 16px;
+  box-shadow: 0 0 10px #e1bee7;
+  transition: background-color 0.3s, box-shadow 0.3s;
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: #9c27b0; /* Darker purple */
+  box-shadow: 0 0 15px #ce93d8;
 }
 
-/* Responsive adjustments */
+/* Responsive adjustments for the unicorn theme */
 @media (max-width: 600px) {
   form {
     width: 90%;
