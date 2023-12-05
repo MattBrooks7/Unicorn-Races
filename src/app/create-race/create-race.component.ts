@@ -11,6 +11,8 @@ export class CreateRaceComponent{
   selectedNumber: number | undefined;
   inputs: number[] = [];
   racers: string[] = [];
+  raceId: number | undefined;
+
 
 
   updateInputs() {
@@ -24,6 +26,9 @@ export class CreateRaceComponent{
 
   getRacers() {
     console.log('Racers: ', this.racers);
+    console.log('Race ID: ', this.raceId);
+    
+
   }
 
   submitForm() {

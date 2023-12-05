@@ -1,7 +1,7 @@
 <form (ngSubmit)="submitForm()">
 <div>
 
-
+  <input type="text" placeholder="Race ID" name="raceId">
 
   <label for="numberOfInputs">Number of Unicorns</label>
   <select [(ngModel)]="selectedNumber" (ngModelChange)="updateInputs()" name="numberOfInputs" id="numberOfInputs">
@@ -12,6 +12,7 @@
   <div *ngFor="let input of inputs; let i = index">
     <input type="text" [placeholder]="'Input ' + (i + 1)" [(ngModel)]="racers[i]" name="input">
   </div>
+
 </div>
   <button (click)="getRacers()">Submit</button>
 </div>
