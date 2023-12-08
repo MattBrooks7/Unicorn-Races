@@ -6,7 +6,7 @@
 
   <label for="numberOfInputs">Number of Unicorns</label>
   <select [(ngModel)]="selectedNumber" (ngModelChange)="updateInputs()" name="numberOfInputs" id="numberOfInputs">
-    
+
       <option *ngFor="let num of numbers" [value]="num">{{ num }}</option>
   </select>
 

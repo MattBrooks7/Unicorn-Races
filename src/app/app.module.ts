@@ -13,6 +13,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { SigninComponent } from './signin/signin.component';
 import { SignupComponent } from './signup/signup.component';
 import { HeaderComponent } from './header/header.component';
+import { UnicoinsComponent } from './unicoins/unicoins.component';
+import { UpcomingEventsComponent } from './upcoming-events/upcoming-events.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +23,8 @@ import { HeaderComponent } from './header/header.component';
     SigninComponent,
     SignupComponent,
     HeaderComponent,
+    UnicoinsComponent,
+    UpcomingEventsComponent,
   ],
   imports: [
     BrowserModule,
