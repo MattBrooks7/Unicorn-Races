@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-signin',
@@ -10,10 +11,14 @@ export class SigninComponent {
     email: '',
     password: ''
   };
+
+  constructor(private authService: AuthService) { }
+
 onSubmit(form: any) {
   if (form.valid) {
     // Handle form submission, e.g., send data to a server
     console.log('Form submitted:', this.user);
+    this.authService.login(this.user.email, this.user.password).subscribe(thing => {console.log(thing)});
   }
 }
 

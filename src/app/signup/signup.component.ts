@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Observable } from 'rxjs';
+import { AuthResponseData, AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-signup',
@@ -11,11 +13,18 @@ export class SignupComponent {
     email: '',
     password: ''
   };
-onSubmit(form: any) {
-  if (form.valid) {
-    // Handle form submission, e.g., send data to a server
+onSubmit(form: NgForm) {
+  if (!form.valid) {
+    return;
+  }
+  const email = form.value.email;
+  const password = form.value.password;
+
+  let authObs: Observable<AuthResponseData>;
+
     console.log('Form submitted:', this.user);
+
   }
 }
 
-}
+
