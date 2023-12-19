@@ -9,22 +9,16 @@ import { AuthResponseData, AuthService } from '../auth.service';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent {
+  constructor(private authService: AuthService) { }
   user = {
     email: '',
     password: ''
   };
 onSubmit(form: NgForm) {
-  if (!form.valid) {
-    return;
-  }
-  const email = form.value.email;
-  const password = form.value.password;
+    const email = form.value.email;
+    const password = form.value.password;
 
-  let authObs: Observable<AuthResponseData>;
-
+    this.authService.signUp(email, password);
     console.log('Form submitted:', this.user);
-
-  }
-}
-
-
+  };
+};

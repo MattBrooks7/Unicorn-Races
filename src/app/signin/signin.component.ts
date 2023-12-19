@@ -15,11 +15,11 @@ export class SigninComponent {
   constructor(private authService: AuthService) { }
 
 onSubmit(form: any) {
-  if (form.valid) {
+  /* if (form.valid) {
     // Handle form submission, e.g., send data to a server
     console.log('Form submitted:', this.user);
     this.authService.login(this.user.email, this.user.password).subscribe(thing => {console.log(thing)});
-  }
+  } */
 }
 
 }
