@@ -7,19 +7,20 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./signin.component.css']
 })
 export class SigninComponent {
+  constructor(private authService: AuthService) { }
+
   user = {
     email: '',
     password: ''
   };
 
-  constructor(private authService: AuthService) { }
 
 onSubmit(form: any) {
-  /* if (form.valid) {
-    // Handle form submission, e.g., send data to a server
+  const email = form.value.email;
+    const password = form.value.password;
+    
+  this.authService.login(email, password);
     console.log('Form submitted:', this.user);
-    this.authService.login(this.user.email, this.user.password).subscribe(thing => {console.log(thing)});
-  } */
 }
 
 }

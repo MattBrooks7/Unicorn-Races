@@ -17,12 +17,13 @@ export interface AuthResponseData {
   providedIn: 'root'
 })
 export class AuthService {
- /* isuserLoggedIn = false;
- login (username: string, password: string): Observable<any> {
-   return from(this.auth.signInWithEmailAndPassword(username, password))
+  authState: Observable<firebase.default.User | null> = this.auth.authState;
 
- } */
-  constructor(private auth: AngularFireAuth) {}
+  constructor(private auth: AngularFireAuth) {
+    this.auth.authState.subscribe((authState) => {
+      console.log('authState', authState);
+    });
+  }
 
     signUp(email: string, password: string){
 
@@ -31,6 +32,20 @@ export class AuthService {
       .catch((error) => {console.log('error', error);})
 
    }
+
+    login(email: string, password: string){
+      this.auth.signInWithEmailAndPassword(email, password)
+        .then(() => {console.log('success');})
+        .catch((error) => {console.log('error', error);})
+    }
+
+    logOut() {
+      this.auth.signOut()
+      .then(() => {console.log('success');})
+      .catch((error) => {console.log('error', error);})
+
+    }
+
 }
 
 

@@ -2,6 +2,8 @@
   <div class="header-left"><a routerLink="/Unicoins">Unicoins</a></div>
   <div class="header-center"> <a routerLink="/Upcoming Events"> Unicorn Rumble</a></div>
   <div class="header-right">
-    <a routerLink="/Sign-In">Sign In</a>
+    <a mat-button routerLink="/Sign-In" *ngIf="(authState | async) == null">Sign In</a>
+    <a mat-button (click)="logOut()"*ngIf="(authState | async) !== null">Sign Out</a>
   </div>
+
 </header>
