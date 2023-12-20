@@ -1,8 +1,12 @@
-<form (ngSubmit)="submitForm()">
+<form >
 <div>
 
   <h4>Generate A Unicorn Race</h4>
   <input type="number" placeholder="Race ID" name="raceId" [(ngModel)]="raceNum">
+
+  <div>
+    <input type="number" placeholder="Race Time" name="raceTime" [(ngModel)]="raceTime">
+  </div>
 
   <label for="numberOfInputs">Number of Unicorns</label>
   <select [(ngModel)]="selectedNumber" (ngModelChange)="updateInputs()" name="numberOfInputs" id="numberOfInputs">
@@ -15,8 +19,9 @@
     <input type="text" [placeholder]="'Input ' + (i + 1)" [(ngModel)]="racers[i]" name="input">
   </div>
 
+
 </div>
-  <button (click)="getRacers()">Submit</button>
+  <button (click)="submitForm()">Submit</button>
 </div>
 </form>
 

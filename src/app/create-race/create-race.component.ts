@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { RacesService } from '../races.service';
 import { FormGroup, FormControl, FormArray, Validators } from '@angular/forms';
+
 
 @Component({
   selector: 'app-race-form',
@@ -12,7 +14,9 @@ export class CreateRaceComponent{
   inputs: number[] = [];
   racers: string[] = [];
   raceNum: number[] | undefined;
+  raceTime: number[] | undefined;
 
+  constructor() {}
 
 
   updateInputs() {
@@ -24,14 +28,13 @@ export class CreateRaceComponent{
     }
   }
 
-  getRacers() {
+ /*  getRacers() {
     console.log('Racers: ', this.racers);
     console.log('Race ID: ', this.raceNum);
-
-
-  }
+  } */
 
   submitForm() {
+
 
   }
 }
