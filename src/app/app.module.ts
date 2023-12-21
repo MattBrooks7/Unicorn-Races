@@ -5,7 +5,8 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 //import { firebaseConfig } from '../environments/environment';
 import { environment } from '../environments/environment';
-
+import { HammerModule } from '@angular/platform-browser';
+import { IgxTimePickerModule } from 'igniteui-angular';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,12 +16,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
+import { NgxMatDatetimePickerModule, NgxMatTimepickerModule } from '@angular-material-components/datetime-picker';
 import { SigninComponent } from './signin/signin.component';
 import { SignupComponent } from './signup/signup.component';
 import { HeaderComponent } from './header/header.component';
 import { UnicoinsComponent } from './unicoins/unicoins.component';
 import { UpcomingEventsComponent } from './upcoming-events/upcoming-events.component';
-
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { UpcomingEventsComponent } from './upcoming-events/upcoming-events.compo
     HeaderComponent,
     UnicoinsComponent,
     UpcomingEventsComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -42,10 +44,15 @@ import { UpcomingEventsComponent } from './upcoming-events/upcoming-events.compo
     MatButtonModule,
     MatSelectModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    HammerModule,
+    IgxTimePickerModule,
+    NgxMatTimepickerModule,
+    NgxMatDatetimePickerModule,
 
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

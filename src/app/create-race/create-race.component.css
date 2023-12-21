@@ -80,3 +80,7 @@ button:hover {
     margin: 10px auto;
   }
 }
+
+igx-time-picker {
+  width: 400px;
+}
