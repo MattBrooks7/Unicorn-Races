@@ -4,8 +4,8 @@
   <h4>Generate A Unicorn Race</h4>
   <input type="number" placeholder="Race ID" name="raceId" [(ngModel)]="raceNum">
 
-<input type="date">
-<input type="time">
+<input [(ngModel)]="raceDate" name = "raceDate" type="date">
+<input [(ngModel)]="raceTime" name = "raceTime" type="time">
 
   <label for="numberOfInputs">Number of Unicorns</label>
   <select [(ngModel)]="selectedNumber" (ngModelChange)="updateInputs()" name="numberOfInputs" id="numberOfInputs">

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { CreateRaceComponent } from './create-race/create-race.component';
+import { Database, list, listVal, object, objectVal, push, ref } from '@angular/fire/database';
+
 
 
 @Injectable({
@@ -10,19 +11,21 @@ export class RacesService {
 
   raceHeat: Race[] = JSON.parse(localStorage.getItem('raceHeat') || '[]');
 
-  constructor() { }
+  constructor(private dataBase: Database) { }
 
   updateRaceHeat(race: Race) {
     this.raceHeat = [...this.raceHeat, {...race}]
   }
 
-  saveRaceHeat() {
-    localStorage.setItem('raceHeat', JSON.stringify(this.raceHeat));
+  saveRaceHeat(dataToSave: any) {
+
+    push(ref(this.dataBase, 'raceHeat'), dataToSave).then(() => console.log('success')).catch((error) => console.log('error', error));
+
   }
 
-  /* getRaceHeat() {
-    return this.raceHeat;
-  } */
+  getRaceHeat() {
+    return listVal(ref(this.dataBase, 'raceHeat'));
+  }
 }
 
 class Race{

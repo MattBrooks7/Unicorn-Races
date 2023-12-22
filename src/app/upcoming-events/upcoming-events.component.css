@@ -1,0 +1,39 @@
+h1{
+  text-align: center;
+  color: rgb(192, 13, 192);
+ }
+
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+}
+
+.race-item {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.race-button {
+  background-color: #e91e63; /* Pink */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.racers-info {
+  
+  padding: 2px;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.racers-info:hover {
+  color: hotpink;
+
+}

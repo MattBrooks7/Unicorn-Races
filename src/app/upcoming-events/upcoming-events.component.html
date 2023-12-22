@@ -1,8 +1,19 @@
+<h1>
+  Upcoming Races
+</h1>
+
+<div class="container">
+  <li *ngFor="let race of races; let i = index"  class="race-item">
+    <button id="seeRacers" (click)="displayRacers(i)" class="race-button">{{race.raceDate}} {{race.raceTime}} {{race.raceNum}}</button>
+
+      <p *ngIf="visibleRacers[i]" class="racers-info">
+        <span routerLink="/Unicoins">{{race.racers}}</span>
+      </p>
+
+  </li>
+</div>
+
+
 <button routerLink="/Create Race">Create Race</button>
 
-<!-- <div *ngIf="racers.length > 0">
-  <h4>Unicorns</h4>
-  <ul>
-    <li *ngFor="let racer of racers">{{ racer }}</li>
-  </ul>
-  </div> -->
+

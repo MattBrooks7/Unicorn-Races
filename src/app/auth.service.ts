@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Auth, User, authState, createUserWithEmailAndPassword, signInWithEmailAndPassword } from '@angular/fire/auth';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 
 import { Observable, from, of } from 'rxjs';
@@ -17,24 +18,24 @@ export interface AuthResponseData {
   providedIn: 'root'
 })
 export class AuthService {
-  authState: Observable<firebase.default.User | null> = this.auth.authState;
+  authState: Observable<User | null>
 
-  constructor(private auth: AngularFireAuth) {
-    this.auth.authState.subscribe((authState) => {
+  constructor(private auth: Auth) {
+    this.authState = authState(this.auth)
+    this.authState.subscribe((authState) => {
       console.log('authState', authState);
     });
   }
 
     signUp(email: string, password: string){
-
-    this.auth.createUserWithEmailAndPassword(email, password)
+createUserWithEmailAndPassword(this.auth, email, password)
       .then(() => {console.log('success');})
       .catch((error) => {console.log('error', error);})
 
    }
 
     login(email: string, password: string){
-      this.auth.signInWithEmailAndPassword(email, password)
+      signInWithEmailAndPassword(this.auth, email, password)
         .then(() => {console.log('success');})
         .catch((error) => {console.log('error', error);})
     }

@@ -1,0 +1,51 @@
+
+h1 {
+  background-color: #fce4ec; /* Light pink background */
+  color: #e91e63; /* Pink text color */
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+}
+
+/*  header {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 5px #ffccff;
+} */
+
+h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+input {
+  padding: 10px;
+  border: 2px solid #e91e63; /* Pink border */
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+button {
+  background-color: #e91e63; /* Pink button background */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 5px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: #ff6699; /* Lighter pink on hover */
+}
+
+p {
+  font-size: 1.2em;
+  margin-top: 20px;
+}

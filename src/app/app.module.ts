@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { AngularFireModule } from '@angular/fire/compat';
-import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+
 //import { firebaseConfig } from '../environments/environment';
 import { environment } from '../environments/environment';
 import { HammerModule } from '@angular/platform-browser';
@@ -22,7 +21,9 @@ import { SignupComponent } from './signup/signup.component';
 import { HeaderComponent } from './header/header.component';
 import { UnicoinsComponent } from './unicoins/unicoins.component';
 import { UpcomingEventsComponent } from './upcoming-events/upcoming-events.component';
-
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { getAuth, provideAuth } from "@angular/fire/auth";
+import { getDatabase, provideDatabase } from '@angular/fire/database';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,8 +44,9 @@ import { UpcomingEventsComponent } from './upcoming-events/upcoming-events.compo
     MatInputModule,
     MatButtonModule,
     MatSelectModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireAuthModule,
+    provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
+    provideAuth(() =>  getAuth()),
+    provideDatabase(() => getDatabase()),
     HammerModule,
     IgxTimePickerModule,
     NgxMatTimepickerModule,
@@ -56,3 +58,5 @@ import { UpcomingEventsComponent } from './upcoming-events/upcoming-events.compo
 })
 export class AppModule {
 }
+
+

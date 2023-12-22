@@ -16,9 +16,10 @@ export class CreateRaceComponent{
   inputs: number[] = [];
   racers: string[] = [];
   raceNum: number[] | undefined;
-  raceTime: number[] | undefined;
+  raceTime: number | undefined;
+  raceDate: number | undefined;
 
-  constructor() {}
+  constructor(public raceService: RacesService) {}
 
 
   updateInputs() {
@@ -30,12 +31,11 @@ export class CreateRaceComponent{
     }
   }
 
- /*  getRacers() {
+  submitForm() {
     console.log('Racers: ', this.racers);
     console.log('Race ID: ', this.raceNum);
-  } */
-
-  submitForm() {
-
+    console.log('raceDate: ', this.raceDate);
+    console.log('raceTime: ', this.raceTime);
+    this.raceService.saveRaceHeat({racers: this.racers, raceNum: this.raceNum, raceDate: this.raceDate, raceTime: this.raceTime});
   }
 }
